@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { BadRequestException, Injectable } from '@nestjs/common';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
 import { PrismaService } from 'src/prisma/prisma.service';
@@ -13,8 +13,17 @@ export class UsersService {
     });
   }
 
-  findAll() {
-    return this.prisma.user.findMany();
+  findAll(userId: string) {
+    
+    if (!Number.isInteger(userId) ) {
+      throw new BadRequestException('Invalid user');
+    }
+
+    return this.prisma.user.findMany({
+      where: {
+        id: Number(userId),
+      }
+    });
   }
 
   findOne(id: number) {

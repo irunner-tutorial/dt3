@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-
+import { generator } from 'ts-password-generator';
 @Injectable()
 export class AppService {
   getHello(): string {
@@ -7,5 +7,9 @@ export class AppService {
   }
   getGoodBye(): string {
     return 'Good bye';
+  }
+
+  genPass(): string {
+    return generator({});
   }
 }

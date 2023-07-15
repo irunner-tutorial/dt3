@@ -14,4 +14,9 @@ export class AppController {
   getGoodBye2(): string {
     return this.appService.getGoodBye();
   }
+
+  @Get('/generatePassword')
+  generateRandomPassword(): string {
+    return this.appService.genPass();
+  }
 }

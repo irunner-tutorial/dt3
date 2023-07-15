@@ -25,9 +25,11 @@
     "@nestjs/platform-express": "^10.0.0",
     "@nestjs/swagger": "^7.1.1",
     "@prisma/client": "^4.16.2",
+    "password-generation": "^1.1.0",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.8.1",
-    "swagger-ui-express": "^4.6.3"
+    "swagger-ui-express": "^4.6.3",
+    "ts-password-generator": "^1.0.6"
   },
   "devDependencies": {
     "@nestjs/cli": "^10.0.0",
