@@ -5,7 +5,7 @@ import { PrismaService } from 'src/prisma/prisma.service';
 
 @Injectable()
 export class UsersService {
-  constructor(private prisma: PrismaService) {}
+  constructor(private prisma: PrismaService) { }
 
   create(createUserDto: CreateUserDto) {
     return this.prisma.user.create({
@@ -14,7 +14,6 @@ export class UsersService {
   }
 
   findAll(userId: string) {
-    
     if (!Number.isInteger(userId) ) {
       throw new BadRequestException('Invalid user');
     }
